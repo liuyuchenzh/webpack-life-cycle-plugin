@@ -2,7 +2,7 @@ import { default as webpack, Configuration } from "webpack";
 import { LifeCyclePlugin } from "../src/index";
 import { resolve } from "path";
 describe("General", () => {
-  it("should be called", () => {
+  it("should be called once for `afterCompile` hook", async () => {
     expect.assertions(1);
     const configFile: Configuration = {
       entry: "entry.js",
@@ -14,19 +14,22 @@ describe("General", () => {
         new LifeCyclePlugin({
           hooks: "afterCompile",
           callback: () => {
-            expect(1);
-            return Promise.resolve();
+            expect(1).toBe(1);
+            return;
           }
         })
       ]
     };
 
-    webpack(configFile, (err, stats) => {
-      // Stats Object
-      if (err || stats.hasErrors()) {
-        // Handle errors here
-      }
-      // Done processing
+    return new Promise(resolve => {
+      webpack(configFile, (err, stats) => {
+        // Stats Object
+        if (err || stats.hasErrors()) {
+          // Handle errors here
+        }
+        // Done processing
+        resolve();
+      });
     });
   });
 });
