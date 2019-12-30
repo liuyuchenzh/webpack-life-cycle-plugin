@@ -1,0 +1,25 @@
+{
+  "name": "webpack-life-cycle-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "start": "tsc -w",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-jest": "24.9.0",
+    "@types/webpack": "4.41.0",
+    "typescript": "3.7.4",
+    "webpack": "4.41.5",
+    "@babel/core": "7.7.7",
+    "@babel/preset-env": "7.7.7",
+    "@babel/preset-typescript": "7.7.7",
+    "jest": "24.9.0"
+  },
+  "keywords": ["webpack", "lifeCyle", "hooks", "plugin"]
+}
