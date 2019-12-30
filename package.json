@@ -10,7 +10,9 @@
   "scripts": {
     "start": "tsc -w",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "release": "standard-version",
+    "prepublishOnly": "tsc"
   },
   "dependencies": {},
   "devDependencies": {
@@ -23,6 +25,7 @@
     "@types/webpack": "4.41.0",
     "babel-jest": "24.9.0",
     "jest": "24.9.0",
+    "standard-version": "^7.0.1",
     "typescript": "3.7.4",
     "webpack": "4.41.5"
   },
