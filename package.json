@@ -1,7 +1,7 @@
 {
-  "name": "webpack-life-cycle-plugin",
+  "name": "webpack-compiler-hooks-plugin",
   "version": "1.0.0",
-  "description": "use life-cycle hooks of webpack's plugin",
+  "description": "use compiler hooks of webpack",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
